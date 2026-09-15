@@ -1,0 +1,21 @@
+DECLARE
+
+	no1 number:=10;
+	no2 number:=0;
+	result number;
+BEGIN
+
+	result:=no1/no2;
+	DBMS_OUTPUT.PUT_LINE('RESULT:'||result);
+
+EXCEPTION
+
+	WHEN ZERO_DIVIDE THEN
+		DBMS_OUTPUT.PUT_LINE('CAN NOT DIVIDE BY ZERO');
+
+	WHEN OTHERS THEN
+
+		DBMS_OUTPUT.PUT_LINE('OTHER ERROR:'||SQLERRM);
+	
+END;
+/
